@@ -12,15 +12,25 @@ $(document).ready(function() {
 
 
 
-    // Set style classes on all the hour blocks
-    // .hour
 
     // Set classes on all the text area time blocks
     // If the time has passed, set the class to .past
     // If the time is present, set the class to .present
     // If the time is future, set the class to .future
 
-    // 
 
+
+
+    // Set values?
+
+    // Set IDs on all the textareas
+    // nineAMtextarea, tenAMtextarea, etc.
+    // Set IDs on all of the buttons
+    // nineAMbutton, tenAMbutton, etc.
+    // When the submit button is pushed, the text content is saved in localStorage
+
+    $(".buttonButton").on("click", function () {
+        console.log($(this).val());
+    });
 
 });
