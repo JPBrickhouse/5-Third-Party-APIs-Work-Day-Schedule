@@ -27,10 +27,37 @@ $(document).ready(function() {
     // nineAMtextarea, tenAMtextarea, etc.
     // Set IDs on all of the buttons
     // nineAMbutton, tenAMbutton, etc.
-    // When the submit button is pushed, the text content is saved in localStorage
 
-    $(".buttonButton").on("click", function () {
-        console.log($(this).val());
-    });
+    // When the submit button is pushed, the text content is saved in localStorage
+    // It also changes the textarea value
+
+    
+
+    function submitRecall(event) {
+        event.preventDefault();
+        
+        
+        // Check if it's blank
+        // If blank, just store it in localStorage
+        // Else, recall from local storage and display
+        // NEED to display initially, too
+
+        
+    };
+
+
+
+    
+    
+    // Defining the function buttonClick, which defines what happens when
+    // the submit buttons are clicked...
+    function buttonClick () {
+        console.log(this.id);
+        
+    
+    }
+
+    $(".buttonButton").on("click",buttonClick);
+
 
 });
