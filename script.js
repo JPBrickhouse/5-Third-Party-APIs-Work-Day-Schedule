@@ -18,7 +18,7 @@ $(document).ready(function() {
     // Set classes on all the text area time blocks
     // If the time has passed, set the class to .past
     // If the time is present, set the class to .present
-    // If the time is future, 
+    // If the time is future, set the class to .future
 
     // 
 
