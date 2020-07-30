@@ -60,4 +60,18 @@ $(document).ready(function() {
     $(".buttonButton").on("click",buttonClick);
 
 
+
+
+    function timeCheck () {
+        var currentHour = moment().format("h a")
+        console.log(currentHour);
+        
+        // $(".timeText").val();
+
+
+        
+    }
+    timeCheck()
+
+
 });
