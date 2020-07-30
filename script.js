@@ -53,23 +53,49 @@ $(document).ready(function() {
     // the submit buttons are clicked...
     function buttonClick () {
         console.log(this.id);
-        
-    
     }
-
     $(".buttonButton").on("click",buttonClick);
 
 
 
 
     function timeCheck () {
-        var currentHour = moment().format("h a")
-        console.log(currentHour);
-        
-        // $(".timeText").val();
+        // Getting the current time
+        var currentTime = moment().format()
+        console.log(currentTime);
 
+        // Looping through each element with the class of timeText
+        $(".timeText").each(function(){
 
+            // Getting the text string from each p with class timeText
+            var timeClassText = $(this).text();
+            console.log(timeClassText);
+            
+            // Parsing that text string and creating a moment object
+            var timeClassTime = moment(timeClassText,["h a"]);
+            console.log(timeClassTime.format());
+
+            // Adding an hour to that moment
+            var timeClassTimePlusOne = moment(timeClassTime).add(1, "hour").format()
+            console.log(timeClassTimePlusOne);
+
+            // Checking if the current time falls BETWEEN two time ranges
+            if (moment(currentTime).isBetween(timeClassTime,timeClassTimePlusOne)) {
+                console.log("between");
+                // if it's between, set class in the row as present
+            }
+            else if (moment(currentTime).isBefore(timeClassTime)) {
+                console.log("before")
+                // if's it before, set class in the row as future
+            }
+            else if (moment(currentTime).isAfter(timeClassTime)) {
+                console.log("after")
+                // if's it after, set class in the row as past
+            }
+
+        });
         
+
     }
     timeCheck()
 
