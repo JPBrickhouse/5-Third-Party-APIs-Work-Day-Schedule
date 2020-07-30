@@ -13,7 +13,6 @@ $(document).ready(function () {
 
 
     function submitRecall(textID) {
-
         // Initializes an empty array
         var calendarListCurrent = [];
 
@@ -39,9 +38,9 @@ $(document).ready(function () {
             // Using the map function to search and return the index position
             // of an object whose property matches a search
             // https://stackoverflow.com/questions/10557486/in-an-array-of-objects-fastest-way-to-find-the-index-of-an-object-whose-attribu
-            // Searching for the location that corresponds to the value of textID
+            // Searching for the index position of the object that corresponds to the value of textID
             var elementPos = calendarListCurrent.map(function (calendarListCurrent) { return calendarListCurrent.time; }).indexOf(textID);
-            
+
             // Creating an object based on the contents
             var eventReplace = {
                 time: textID,
@@ -55,7 +54,7 @@ $(document).ready(function () {
             // (1 because we're only deleting that particular element)
             // eventReplace is the element that is being inserted at that index
             // https://www.javascripttutorial.net/javascript-array-splice/
-            calendarListCurrent.splice(elementPos,1,eventReplace);
+            calendarListCurrent.splice(elementPos, 1, eventReplace);
         }
 
         // if timeTestCheck is false, meaning that a particular textID doesn't yet exist,
@@ -134,5 +133,57 @@ $(document).ready(function () {
     // Running the time check function by default as the page loads
     timeCheck()
 
+
+
+    function eventsDisplay() {
+        // Looping through each textarea element
+        $("textarea").each(function () {
+
+            // Getting the id of the textarea
+            var textID = this.id;
+
+            // Initializes an empty array
+            var calendarListCurrent = [];
+
+            // Run an if else statement, which checks to see if values exist in localStorage
+            // if calendarListStorage is null, then use the empty array initilized earlier
+            if (localStorage.getItem("calendarListStorage") === null) {
+                calendarListCurrent;
+            }
+            // else, calendarListStorage has values
+            // Therefore, use getItem to get the calendarListStorage array from localStorage
+            // and make that the calendarListCurrent array
+            else {
+                calendarListCurrent = JSON.parse(localStorage.getItem("calendarListStorage"));
+            }
+
+            // Checking to see if a particular textID already exists in the calendarListCurrent
+            let timeTestCheck = calendarListCurrent.find(calendarListCurrent => calendarListCurrent.time === textID);
+
+            // if timeTestCheck is true, meaning that a particular textID already exists...
+            if (timeTestCheck) {
+                // Using the map function to search and return the index position
+                // of an object whose property matches a search
+                // https://stackoverflow.com/questions/10557486/in-an-array-of-objects-fastest-way-to-find-the-index-of-an-object-whose-attribu
+                // Searching for the index position of the object that corresponds to the value of textID
+                var elementPos = calendarListCurrent.map(function (calendarListCurrent) { return calendarListCurrent.time; }).indexOf(textID);
+                
+                // Getting the property value at that index
+                // (aka, getting the stored calendar events)
+                var display = calendarListCurrent[elementPos].events
+                
+                // Display that property value in the textarea
+                // (aka, displaying the stored calendar events)
+                document.getElementById(textID).value = display;
+            }
+            // if timeTestCheck is false, meaning that a particular textID doesn't yet exist,
+            // don't do anything, since there isn't any text to return
+            else {
+                return;
+            }
+        })
+    };
+    // Automatically display any events upon loading the page
+    eventsDisplay()
 
 });
