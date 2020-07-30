@@ -62,41 +62,41 @@ $(document).ready(function() {
     function timeCheck () {
         // Getting the current time
         var currentTime = moment().format()
-        console.log(currentTime);
 
         // Looping through each element with the class of timeText
         $(".timeText").each(function(){
 
             // Getting the text string from each p with class timeText
             var timeClassText = $(this).text();
-            console.log(timeClassText);
             
             // Parsing that text string and creating a moment object
             var timeClassTime = moment(timeClassText,["h a"]);
-            console.log(timeClassTime.format());
 
             // Adding an hour to that moment
             var timeClassTimePlusOne = moment(timeClassTime).add(1, "hour").format()
-            console.log(timeClassTimePlusOne);
 
             // Checking if the current time falls BETWEEN two time ranges
             if (moment(currentTime).isBetween(timeClassTime,timeClassTimePlusOne)) {
-                console.log("between");
+                var overallRow = this.parentElement.parentElement;
+                overallRow.classList.remove("past", "present", "future");
+                overallRow.classList.add("present");
                 // if it's between, set class in the row as present
             }
             else if (moment(currentTime).isBefore(timeClassTime)) {
-                console.log("before")
+                var overallRow = this.parentElement.parentElement;
+                overallRow.classList.remove("past", "present", "future");
+                overallRow.classList.add("future");
                 // if's it before, set class in the row as future
             }
             else if (moment(currentTime).isAfter(timeClassTime)) {
-                console.log("after")
+                var overallRow = this.parentElement.parentElement;
+                overallRow.classList.remove("past", "present", "future");
+                overallRow.classList.add("past");
                 // if's it after, set class in the row as past
             }
-
         });
-        
-
     }
+    // Running the time check function by default as the page loads
     timeCheck()
 
 
