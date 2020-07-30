@@ -53,6 +53,17 @@ $(document).ready(function() {
     // the submit buttons are clicked...
     function buttonClick () {
         console.log(this.id);
+        
+        var textID = this.id + "text";
+        console.log(textID);
+
+
+        // UPDATE FROM HERE
+        // WRITE THE FUNCTION submitRecall
+        // CALL THE FUNCTION AND OUTPUT THE VALUE
+
+        document.getElementById(textID).value = "Store";
+
     }
     $(".buttonButton").on("click",buttonClick);
 
@@ -75,24 +86,23 @@ $(document).ready(function() {
             // Adding an hour to that moment
             var timeClassTimePlusOne = moment(timeClassTime).add(1, "hour").format()
 
-            // Checking if the current time falls BETWEEN two time ranges
             if (moment(currentTime).isBetween(timeClassTime,timeClassTimePlusOne)) {
+                // if it's between, set class in the row as present
                 var overallRow = this.parentElement.parentElement;
                 overallRow.classList.remove("past", "present", "future");
                 overallRow.classList.add("present");
-                // if it's between, set class in the row as present
             }
             else if (moment(currentTime).isBefore(timeClassTime)) {
+                // if's it before, set class in the row as future
                 var overallRow = this.parentElement.parentElement;
                 overallRow.classList.remove("past", "present", "future");
                 overallRow.classList.add("future");
-                // if's it before, set class in the row as future
             }
             else if (moment(currentTime).isAfter(timeClassTime)) {
+                // if's it after, set class in the row as past
                 var overallRow = this.parentElement.parentElement;
                 overallRow.classList.remove("past", "present", "future");
                 overallRow.classList.add("past");
-                // if's it after, set class in the row as past
             }
         });
     }
