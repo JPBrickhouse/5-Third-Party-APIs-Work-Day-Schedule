@@ -3,11 +3,13 @@
 // this function will only run once the DOM is ready for JavaScript code to execute.
 $(document).ready(function () {
 
-    // Displaying the current date and day of the week in the Jumbotron Header
+    // Display the time immediately on the Jumobtron header when the page runs
+    $("#currentDay").html(moment().format('dddd, MMMM Do, YYYY, h:mm:ss a'));
+
+    // This dynamically updates and displays the current time every second
     var update = function () {
         $("#currentDay").html(moment().format('dddd, MMMM Do, YYYY, h:mm:ss a'));
     }
-    // This dynamically updates and displays the current time every second
     setInterval(update, 1000);
 
 
@@ -39,7 +41,7 @@ $(document).ready(function () {
             // of an object whose property matches a search
             // https://stackoverflow.com/questions/10557486/in-an-array-of-objects-fastest-way-to-find-the-index-of-an-object-whose-attribu
             // Searching for the index position of the object that corresponds to the value of textID
-            var elementPos = calendarListCurrent.map(function (calendarListCurrent) { return calendarListCurrent.time; }).indexOf(textID);
+            var elementPos = calendarListCurrent.map((calendarListCurrent) => calendarListCurrent.time.indexOf(textID));
 
             // Creating an object based on the contents
             var eventReplace = {
@@ -166,7 +168,7 @@ $(document).ready(function () {
                 // of an object whose property matches a search
                 // https://stackoverflow.com/questions/10557486/in-an-array-of-objects-fastest-way-to-find-the-index-of-an-object-whose-attribu
                 // Searching for the index position of the object that corresponds to the value of textID
-                var elementPos = calendarListCurrent.map(function (calendarListCurrent) { return calendarListCurrent.time; }).indexOf(textID);
+                var elementPos = calendarListCurrent.map((calendarListCurrent) => calendarListCurrent.time.indexOf(textID));
                 
                 // Getting the property value at that index
                 // (aka, getting the stored calendar events)

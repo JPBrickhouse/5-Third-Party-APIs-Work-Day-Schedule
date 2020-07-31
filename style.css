@@ -9,7 +9,7 @@ textarea{
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
+  /* border-left: 1px solid black; */
   /* padding: 10px; */
   width: 100%; /* Textarea becomes the full width of the container */
 }
@@ -35,6 +35,7 @@ textarea{
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
+  overflow: hidden; /* Fixing the overflow of the blue button */
 }
 
 .hour {
@@ -59,6 +60,7 @@ textarea{
 }
 
 .saveBtn {
+  font-size: 20px; /* Adjusting the hover size */
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -67,6 +69,6 @@ textarea{
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
-  transition: all .3s ease-in-out;
+  font-size: 40px; /* Adjusting the hover size */
+  /* transition: all .3s ease-in-out; */
 }
