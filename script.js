@@ -41,7 +41,7 @@ $(document).ready(function () {
             // of an object whose property matches a search
             // https://stackoverflow.com/questions/10557486/in-an-array-of-objects-fastest-way-to-find-the-index-of-an-object-whose-attribu
             // Searching for the index position of the object that corresponds to the value of textID
-            var elementPos = calendarListCurrent.map((calendarListCurrent) => calendarListCurrent.time.indexOf(textID));
+            var elementPos = calendarListCurrent.map(function (calendarListCurrent) { return calendarListCurrent.time; }).indexOf(textID);
 
             // Creating an object based on the contents
             var eventReplace = {
@@ -168,7 +168,7 @@ $(document).ready(function () {
                 // of an object whose property matches a search
                 // https://stackoverflow.com/questions/10557486/in-an-array-of-objects-fastest-way-to-find-the-index-of-an-object-whose-attribu
                 // Searching for the index position of the object that corresponds to the value of textID
-                var elementPos = calendarListCurrent.map((calendarListCurrent) => calendarListCurrent.time.indexOf(textID));
+                var elementPos = calendarListCurrent.map(function (calendarListCurrent) { return calendarListCurrent.time; }).indexOf(textID);
                 
                 // Getting the property value at that index
                 // (aka, getting the stored calendar events)
