@@ -3,6 +3,9 @@
 ## Homework 5 Introduction
 We were tasked with creating a simple calendar application that allows the user to save events for each hour of the day. The events would be saved to localStorage and would persist even if the page was refreshed or exited. As well, based on the time of the day, the calendar would dynamically update styles and formatting.
 
+## Deployed Application:
+### [https://jpbrickhouse.github.io/5-Third-Party-APIs-Work-Day-Schedule/](https://jpbrickhouse.github.io/5-Third-Party-APIs-Work-Day-Schedule/)
+
 ## Overall Notes
 
 Starter code was provided for the index.html and style.css files. No code was provided for the script.js file.
