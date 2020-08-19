@@ -6,6 +6,9 @@ We were tasked with creating a simple calendar application that allows the user 
 ## Deployed Application:
 ### [https://jpbrickhouse.github.io/5-Third-Party-APIs-Work-Day-Schedule/](https://jpbrickhouse.github.io/5-Third-Party-APIs-Work-Day-Schedule/)
 
+## Screenshot:
+![Schedule Calendar Visual](./img/WorkDaySample.png)
+
 ## Overall Notes
 
 Starter code was provided for the index.html and style.css files. No code was provided for the script.js file.
