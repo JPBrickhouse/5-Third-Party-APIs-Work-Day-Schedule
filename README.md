@@ -1,10 +1,10 @@
-# 5-Third-Party-APIs-Work-Day-Schedule
+# Work-Day-Scheduler
 
-## Homework 5 Introduction
+## Introduction
 We were tasked with creating a simple calendar application that allows the user to save events for each hour of the day. The events would be saved to localStorage and would persist even if the page was refreshed or exited. As well, based on the time of the day, the calendar would dynamically update styles and formatting.
 
 ## Deployed Application:
-### [https://jpbrickhouse.github.io/5-Third-Party-APIs-Work-Day-Schedule/](https://jpbrickhouse.github.io/5-Third-Party-APIs-Work-Day-Schedule/)
+### [https://jpbrickhouse.github.io/Work-Day-Scheduler/](https://jpbrickhouse.github.io/Work-Day-Scheduler/)
 
 ## Screenshot:
 ![Schedule Calendar Visual](./img/WorkDaySample.png)
